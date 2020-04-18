@@ -29,8 +29,6 @@ class AbilityUtils
                 return new ScaleAbility($values);
             case "Permission":
                 return new PermissionAbility($values);
-            case "Speed":
-                return new SpeedAbility($values);
             case "Knockback":
                 return new KnockbackAbility($values);
             case "DamageNegation":

@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetEquippedEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetUnequippedEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/Utils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/armorsets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/armorsets.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/CustomArmorCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Commands/CustomArmorCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/SpeedAbility.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +67,7 @@
       <workItem from="1587205455922" duration="3511000" />
       <workItem from="1587209050500" duration="556000" />
       <workItem from="1587209634873" duration="4403000" />
-      <workItem from="1587214143581" duration="8380000" />
+      <workItem from="1587214143581" duration="8549000" />
     </task>
     <servers />
   </component>

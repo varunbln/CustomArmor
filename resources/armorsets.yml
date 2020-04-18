@@ -23,7 +23,6 @@ Example:
     #   Scale: Increases the wearers size when the full set is equipped.
     #   Effect: Gives the player the effect when the full set is worn.
     #   Permission: Gives the player the permission as long as the full set is worn.
-    #   Speed: Modifies the player's speed as long as the full set is worn.
 
     # Doubles the players size.
     Scale: 2 
@@ -33,8 +32,6 @@ Example:
       - jump_boost: 2
     # Gives the player the permission "armorsets.fly". This is not a real permission.
     Permission: armorsets.fly
-    # Increases the players speed by 10%
-    Speed: 1.1
 
   # Set this field to set a custom RGB color to the pieces of the Armor Set.
   # This only applies if the tier of the Armor Set is leather.
@@ -151,7 +148,7 @@ Tank:
 
   setbonuslore:
     - "&1&lFULL SET BONUS: "
-    - "&e+20% Resistance to knockback"
+    - "&r&3+20% Resistance to knockback"
     - "&3+10% Damage negation from all causes"
     - "&3+20% Damage negation against Swords"
     - "&3+15% Damage negation against Axes"
