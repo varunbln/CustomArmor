@@ -1,0 +1,21 @@
+# ArmorSets can added, removed and modified in armorsets.yml
+
+# Set this to true if you want to use the blacklisted-worlds settings.
+# If both enable-world-blacklist and disable-world-blacklist are set to the same setting,
+# armor set abilities will be enabled for all words.
+enable-world-blacklist: false
+
+# If enable-world-blacklist is set to true, armor set abilities will be enabled for all worlds,
+# except the worlds mentioned here.
+blacklisted-worlds:
+  - blacklistedworld1
+  - blacklistedworld2
+
+# Set this to true if you want to use the whitelisted-worlds settings
+enable-world-whitelist: false
+
+# If enable-world-whitelist is set to true, armor set abilities death will be disabled for all worlds,
+# except the worlds mentioned here.
+whitelisted-worlds:
+  - whitelistedworld1
+  - whitelistedworld2

@@ -1,0 +1,159 @@
+# You can add, remove and modify Custom Armor Sets here.
+# The symbol & can be used for color codes.
+# A few armor sets have already been created as an example.
+# The name of each Armor Set must be UNIQUE.
+
+# This is the name of the armor set.
+Example:
+
+  # This is the tier of the armor. The five tiers are leather, chainmail, iron, gold and diamond.
+  tier: leather
+
+  # Set this to true to give all pieces of the Armor Set a glint even when not enchanted.
+  glint: true
+
+  # These are the abilities given by the Armor Set when all 4 pieces of the armor set are worn.
+  # Due to this being an example, all possible abilities have been given. Keep in mind you may
+  # give as many abilities as you want and don't have to give all of them.
+  # You can have multiple entries for the same ability. So to give two permissions, you can use
+  # Permission: xxx and Permission: yyy in two separate lines.
+  abilities:
+
+    # This is the type of ability. The abilities used here are:
+    #   Scale: Increases the wearers size when the full set is equipped.
+    #   Effect: Gives the player the effect when the full set is worn.
+    #   Permission: Gives the player the permission as long as the full set is worn.
+    #   Speed: Modifies the player's speed as long as the full set is worn.
+    #   Knockback: Reduces the players knockback as long as the full set is worn.
+
+    # Doubles the players size.
+    Scale: 2 
+    # Gives the player the Speed and Jump Boost Effects at level 2
+    Effect:
+      - speed: 2
+      - jump_boost: 2
+    # Gives the player the permission "armorsets.fly". This is not a real permission.
+    Permission: armorsets.fly
+    # Increases the players speed by 10%
+    Speed: 1.1
+    # Makes the player take 20% less knockback. If set to 1, normal knockback is taken.
+    Knockback: 0.8
+
+  # Set this field to set a custom RGB color to the pieces of the Armor Set.
+  # This only applies if the tier of the Armor Set is leather.
+  color:
+    r: 0
+    g: 255
+    b: 255
+
+  # Set a custom value to the strength of each armor piece of the set here.
+  # This way, you can make leather armor as strong as diamond :D
+  # You can google the default strength value of each piece of every tier
+  # In this example, I'm setting the strength to the strength of diamond armor.
+  strength:
+    helmet: 3
+    chestplate: 8
+    leggings: 6
+    boots: 3
+
+  # This is the name of each armor piece in the set.
+  name:
+    helmet: "&l&bExample Helmet"
+    chestplate: "&l&bExample Chestplate"
+    leggings: "&l&bExample Leggings"
+    boots: "&l&bExample Boots"
+
+  # This is the lore/description of each piece of the Armor Set.
+  # {FULLSETBONUS} is replaced by the description of the bonus wearing the entire set gives.
+  lore:
+    helmet:
+      - "&7Example Helmet is an epic helmet"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "&7Example Chestplate is an epic chestplate"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "&7Example Leggings are epic leggings"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "&7Example Boots are epic boots"
+      - " "
+      - "{FULLSETBONUS}"
+
+  # This is what replaces {FULLSETBONUS} in the lore of the armor piece
+  setbonuslore:
+    - "&6&lFULL SET BONUS: "
+    - "&r&e+2x Increase in size"
+    - "&e+Level 2 Speed and Jump Boost Effects"
+    - "&e+Permission to Fly"
+    - "&e+10% Increase in Speed"
+    - "&e+20% Resistance to knockback"
+
+Tank:
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # This is the type of ability. The abilities used here are:
+    #   DamageNegation: Reduces the damage taken by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+
+    # Makes player take 10% less damage overall. Set to 1 to take no damage
+    DamageNegation: 0.1
+    # Makes player take 20% less damage from swords. Set to 1 to take no damage
+    SwordNegation: 0.2
+    # Makes player take 15% less damage from axes. Set to 1 to take no damage
+    AxeNegation: 0.15
+    # Makes player take 50% less damage from bows. Set to 1 to take no damage
+    BowNegation: 0.5
+
+  color:
+    r: 255
+    g: 0
+    b: 255
+
+  strength:
+    helmet: 3
+    chestplate: 8
+    leggings: 6
+    boots: 3
+
+  name:
+    helmet: "&l&6Tank Helmet"
+    chestplate: "&l&6Tank Chestplate"
+    leggings: "&l&6Tank Leggings"
+    boots: "&l&6Tank Boots"
+
+  lore:
+    helmet:
+      - "&7Tank Helmet is an epic helmet"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "&7Tank Chestplate is an epic chestplate"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "&7Tank Leggings are epic leggings"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "&7Tank Boots are epic boots"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&1&lFULL SET BONUS: "
+    - "&3+10% Damage negation from all causes"
+    - "&3+20% Damage negation against Swords"
+    - "&3+15% Damage negation against Axes"
+    - "&3+50% Damage negation against Bows"
+
+
