@@ -4,6 +4,7 @@ namespace Heisenburger69\BurgerCustomArmor;
 
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
+use Heisenburger69\BurgerCustomArmor\Utils\EquipmentUtils;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
@@ -46,25 +47,57 @@ class EventListener implements Listener
         }
     }
 
-    public function onChange(EntityArmorChangeEvent $event)
+    public function onEquip(EntityArmorChangeEvent $event)
     {
         $player = $event->getEntity();
-        if (!$player instanceof Player) return;
+        if (!$player instanceof Player) {
+            return;
+        }
         $item = $event->getNewItem();
-        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) return;
-
+        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null){
+            return;
+        }
         $setName = $nbt->getValue();
-        if (isset($this->plugin->using[$setName])) {
-            $this->plugin->addUsingSet($player, $item, $setName);
-            if ($this->plugin->canUseSet($player, $setName)) {
-                $armorSet = $this->plugin->customSets[$setName];
-                if ($armorSet instanceof CustomArmorSet) {
-                    foreach ($armorSet->getAbilities() as $ability) {
-                        if ($ability instanceof TogglableAbility) {
-                            $ability->on($player);
-                        }
-                    }
-                }
+        if (!isset($this->plugin->using[$setName])) {
+            return;
+        }
+        EquipmentUtils::addUsingSet($player, $item, $setName);
+        if (!EquipmentUtils::canUseSet($player, $setName)) {
+            return;
+        }
+        $armorSet = $this->plugin->customSets[$setName];
+        if (!$armorSet instanceof CustomArmorSet) {
+            return;
+        }
+        foreach ($armorSet->getAbilities() as $ability) {
+            if ($ability instanceof TogglableAbility) {
+                $ability->on($player);
+            }
+        }
+    }
+
+    public function onUnequip(EntityArmorChangeEvent $event)
+    {
+        $player = $event->getEntity();
+        if (!$player instanceof Player) {
+            return;
+        }
+        $item = $event->getOldItem();
+        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null){
+            return;
+        }
+        $setName = $nbt->getValue();
+        if (!isset($this->plugin->using[$setName])) {
+            return;
+        }
+        EquipmentUtils::removeUsingSet($player, $item, $setName);
+        $armorSet = $this->plugin->customSets[$setName];
+        if (!$armorSet instanceof CustomArmorSet) {
+            return;
+        }
+        foreach ($armorSet->getAbilities() as $ability) {
+            if ($ability instanceof TogglableAbility) {
+                $ability->off($player);
             }
         }
     }
