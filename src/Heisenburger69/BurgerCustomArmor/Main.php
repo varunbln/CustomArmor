@@ -7,13 +7,17 @@ namespace Heisenburger69\BurgerCustomArmor;
 use Heisenburger69\BurgerCustomArmor\Abilities\AbilityUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
-use pocketmine\level\Level;
+use Heisenburger69\BurgerCustomArmor\Commands\CustomArmorCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Color;
 use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as C;
 
 class Main extends PluginBase
 {
+    /** @var string */
+    public const PREFIX = C::BOLD . C::AQUA . "Burger" . C::LIGHT_PURPLE . "CustomArmor" . "> " . C::RESET;
+
     /**
      * @var Main
      */
@@ -47,6 +51,7 @@ class Main extends PluginBase
 
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         $this->registerArmorSets();
+        $this->getServer()->getCommandMap()->register("BurgerCustomArmor", new CustomArmorCommand($this));
     }
 
     public function registerArmorSets(): void

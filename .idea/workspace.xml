@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DefensiveAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/AxeAmplificationAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/BowAmplificationAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/DamageAmplificationAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/OffensiveAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/SwordAmplificationAbility.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/ReactiveAbility.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/armorsets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/armorsets.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/SpeedAbility.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DamageNegationAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DamageNegationAbility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/KnockbackAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/KnockbackNegationAbility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Commands/CustomArmorCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Commands/CustomArmorCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetEquippedEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetEquippedEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetUnequippedEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Events/CustomSetUnequippedEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +45,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../pmmp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Utils" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Commands" />
@@ -67,7 +84,11 @@
       <workItem from="1587205455922" duration="3511000" />
       <workItem from="1587209050500" duration="556000" />
       <workItem from="1587209634873" duration="4403000" />
-      <workItem from="1587214143581" duration="8549000" />
+      <workItem from="1587214143581" duration="8885000" />
+      <workItem from="1587223904633" duration="225000" />
+      <workItem from="1587224183346" duration="85000" />
+      <workItem from="1587224303277" duration="1026000" />
+      <workItem from="1587322482691" duration="2410000" />
     </task>
     <servers />
   </component>
@@ -79,7 +100,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

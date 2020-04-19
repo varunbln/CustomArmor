@@ -2,15 +2,18 @@
 
 namespace Heisenburger69\BurgerCustomArmor\Abilities;
 
-use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DamageNegationAbility;
-use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\KnockbackAbility;
-use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\SwordNegationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\AxeNegationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\BowNegationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DamageNegationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\KnockbackNegationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\SwordNegationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\AxeAmplificationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\BowAmplificationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\DamageAmplificationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\SwordAmplificationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\EffectAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\PermissionAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\ScaleAbility;
-use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\SpeedAbility;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 
@@ -20,9 +23,9 @@ class AbilityUtils
     /**
      * @param string $ability
      * @param mixed $values
-     * @return ArmorAbility
+     * @return ArmorAbility|null
      */
-    public static function getAbility(string $ability, $values): ArmorAbility
+    public static function getAbility(string $ability, $values): ?ArmorAbility
     {
         switch ($ability) {
             case "Scale":
@@ -30,7 +33,7 @@ class AbilityUtils
             case "Permission":
                 return new PermissionAbility($values);
             case "Knockback":
-                return new KnockbackAbility($values);
+                return new KnockbackNegationAbility($values);
             case "DamageNegation":
                 return new DamageNegationAbility($values);
             case "SwordNegation":
@@ -39,6 +42,14 @@ class AbilityUtils
                 return new AxeNegationAbility($values);
             case "BowNegation":
                 return new BowNegationAbility($values);
+            case "DamageAmplification":
+                return new DamageAmplificationAbility($values);
+            case "SwordAmplification":
+                return new SwordAmplificationAbility($values);
+            case "AxeAmplification":
+                return new AxeAmplificationAbility($values);
+            case "BowAmplification":
+                return new BowAmplificationAbility($values);
             default:
                 return null;
         }

@@ -98,10 +98,10 @@ Tank:
     #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
     #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
     #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
-    #   Knockback: Reduces the players knockback as long as the full set is worn.
+    #   KnockbackNegation: Reduces the players knockback as long as the full set is worn.
 
     # Makes the player take 20% less knockback. If set to 1, normal knockback is taken.
-    Knockback: 0.8
+    KnockbackNegation: 0.8
     # Makes player take 10% less damage overall. Set to 1 to take no damage. Set negative to for damage amplification.
     DamageNegation: 0.1
     # Makes player take 20% less damage from swords. Set to 1 to take no damage. Set negative to for damage amplification.
@@ -117,10 +117,10 @@ Tank:
     b: 255
 
   strength:
-    helmet: 3
-    chestplate: 8
-    leggings: 6
-    boots: 3
+    helmet: 4
+    chestplate: 10
+    leggings: 7
+    boots: 4
 
   name:
     helmet: "&l&6Tank Helmet"
@@ -148,10 +148,75 @@ Tank:
 
   setbonuslore:
     - "&1&lFULL SET BONUS: "
-    - "&r&3+20% Resistance to knockback"
-    - "&3+10% Damage negation from all causes"
-    - "&3+20% Damage negation against Swords"
-    - "&3+15% Damage negation against Axes"
-    - "&3+50% Damage negation against Bows"
+    - "&r&b+20% Resistance to knockback"
+    - "&b+10% Damage negation from all causes"
+    - "&b+20% Damage negation against Swords"
+    - "&b+15% Damage negation against Axes"
+    - "&b+50% Damage negation against Bows"
+
+Assassin:
+
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.1
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.2
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.15
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.5
+
+  color:
+    r: 255
+    g: 255
+    b: 0
+
+  strength:
+    helmet: 2
+    chestplate: 6
+    leggings: 4
+    boots: 2
+
+  name:
+    helmet: "&l&cAssassin Helmet"
+    chestplate: "&l&cAssassin Chestplate"
+    leggings: "&l&cAssassin Leggings"
+    boots: "&l&cAssassin Boots"
+
+  lore:
+    helmet:
+      - "&7Assassin Helmet is an epic helmet"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "&7Assassin Chestplate is an epic chestplate"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "&7Assassin Leggings are epic leggings"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "&7Assassin Boots are epic boots"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&2&lFULL SET BONUS: "
+    - "&r&a+10% Damage dealt overall"
+    - "&a+20% Outgoing damage dealt using Swords"
+    - "&a+15% Outgoing damage dealt using Axes"
+    - "&a+50% Outgoing damage dealt using Bows"
 
 

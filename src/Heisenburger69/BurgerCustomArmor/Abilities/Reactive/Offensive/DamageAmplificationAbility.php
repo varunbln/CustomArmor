@@ -1,12 +1,11 @@
 <?php
 
-namespace Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive;
+namespace Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive;
 
-use Heisenburger69\BurgerCustomArmor\Abilities\ArmorAbility;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\Player;
 
-class DamageNegationAbility extends DefensiveAbility
+class DamageAmplificationAbility extends OffensiveAbility
 {
 
     /**
@@ -26,7 +25,7 @@ class DamageNegationAbility extends DefensiveAbility
 
     public function activate(EntityDamageEvent $event)
     {
-        $baseDmg = $event->getBaseDamage() - ($event->getBaseDamage() * $this->negation);
+        $baseDmg = $event->getBaseDamage() + ($event->getBaseDamage() * $this->negation);
         if($baseDmg < 0) $baseDmg = 0;
         $event->setBaseDamage($baseDmg);
     }

@@ -77,6 +77,7 @@ class EquipmentUtils
     public static function canUseSet(Player $player, $setName): bool
     {
         $playerName = $player->getName();
+        if(!isset(Main::$instance->using[$setName][$playerName])) return false;
         if(
             Main::$instance->using[$setName][$playerName]["helmet"] === true &&
             Main::$instance->using[$setName][$playerName]["chestplate"] === true &&
