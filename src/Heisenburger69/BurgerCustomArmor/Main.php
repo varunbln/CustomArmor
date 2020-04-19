@@ -8,6 +8,8 @@ use Heisenburger69\BurgerCustomArmor\Abilities\AbilityUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Commands\CustomArmorCommand;
+use pocketmine\item\Durable;
+use pocketmine\item\Pickaxe;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Color;
 use pocketmine\utils\Config;
@@ -73,7 +75,7 @@ class Main extends PluginBase
         if (isset($properties["color"])) {
             $color = new Color($properties["color"]["r"], $properties["color"]["g"], $properties["color"]["b"]);
         }
-
+        
         $abilities = [];
         if (is_array($properties["abilities"]) && count($properties["abilities"]) > 0) {
             foreach ($properties["abilities"] as $ability => $value) {

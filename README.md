@@ -2,7 +2,9 @@
 Saw that server that gave you cool effects if you wore the entirety of a specific armor set? 
 Now you can create custom armor sets with several abilities too! With a wide range of abilities that you can give armor sets
 and loads more coming, your server can take PvP to the next level! Players will receive all the abilities listed for the Armor
-Set when they wear ALL FOUR pieces: Helmet, Chestplate, Leggings and Boots of the Armor Set.
+Set when they wear ALL FOUR pieces: Helmet, Chestplate, Leggings and Boots of the Armor Set.  
+
+Players can be given Custom Armor Sets with the command /customarmor
 ## Features:
 * Create an infinite number of Custom Armor Sets.
 * Over 15 different abilities you can grant to different Armor Sets.
@@ -25,6 +27,8 @@ Set when they wear ALL FOUR pieces: Helmet, Chestplate, Leggings and Boots of th
 - [ ] Conditional Abilities, for example: Near grass blocks
 - [ ] Allow mix-and-match of tiers rather than forcing an entire set to be one tier
 - [ ] Create a Wiki for more in-depth understanding of Armor Abilities
+- [ ] Custom crafting for Armor Pieces
+- [ ] Custom durability values for Armor Pieces
 - [ ] Create an API for creation and registration of Abilities and Armor Sets
 - [ ] Rainbow Armor Sets
 - [ ] Complex AND OR equations allowing insanely customizable abilities
