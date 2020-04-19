@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ArmorSets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DefensiveAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DefensiveAbility.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/OffensiveAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/OffensiveAbility.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/TogglableAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/TogglableAbility.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Commands/CustomArmorCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Commands/CustomArmorCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DamageNegationAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Defensive/DamageNegationAbility.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/DamageAmplificationAbility.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive/DamageAmplificationAbility.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +87,7 @@
       <workItem from="1587224183346" duration="85000" />
       <workItem from="1587224303277" duration="1026000" />
       <workItem from="1587322482691" duration="5076000" />
-      <workItem from="1587327667784" duration="286000" />
+      <workItem from="1587327667784" duration="409000" />
     </task>
     <servers />
   </component>
