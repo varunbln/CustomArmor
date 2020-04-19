@@ -12,9 +12,9 @@ class EquipmentUtils
     /**
      * @param Player $player
      * @param Item $item
-     * @param $setName
+     * @param string $setName
      */
-    public static function removeUsingSet(Player $player, Item $item, $setName)
+    public static function removeUsingSet(Player $player, Item $item, string $setName): void
     {
         $playerName = $player->getName();
         if (!isset(Main::$instance->using[$setName][$playerName])) {
@@ -71,10 +71,10 @@ class EquipmentUtils
 
     /**
      * @param Player $player
-     * @param $setName
+     * @param string $setName
      * @return bool
      */
-    public static function canUseSet(Player $player, $setName): bool
+    public static function canUseSet(Player $player, string $setName): bool
     {
         $playerName = $player->getName();
         if(!isset(Main::$instance->using[$setName][$playerName])) return false;

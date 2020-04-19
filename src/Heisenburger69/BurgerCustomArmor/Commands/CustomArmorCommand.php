@@ -29,7 +29,7 @@ class CustomArmorCommand extends PluginCommand
      * @param CommandSender $sender
      * @param string $commandLabel
      * @param array $args
-     * @return bool|mixed
+     * @return void
      */
     public function execute(CommandSender $sender, string $commandLabel, array $args): void
     {

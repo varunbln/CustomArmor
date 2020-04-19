@@ -57,10 +57,10 @@ class AbilityUtils
 
     /**
      * @param string $ability
-     * @param $value
+     * @param array $value
      * @return array
      */
-    public static function getEffectAbilities(string $ability, $value): array
+    public static function getEffectAbilities(string $ability, array $value): array
     {
         $abilities = [];
         if ($ability !== "Effect") {
