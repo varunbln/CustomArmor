@@ -28,4 +28,7 @@ Set when they wear ALL FOUR pieces: Helmet, Chestplate, Leggings and Boots of th
 - [ ] Create an API for creation and registration of Abilities and Armor Sets
 - [ ] Rainbow Armor Sets
 - [ ] Complex AND OR equations allowing insanely customizable abilities
-
+## Showcase:
+![AssasinSet](/resources/AssassinSet.png)\
+![ExampleSet](/resources/ExampleSet.png)\
+![WearingAqua](/resources/WearingAqua.png)

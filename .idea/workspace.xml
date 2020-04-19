@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/armorsets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/armorsets.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +85,7 @@
       <workItem from="1587223904633" duration="225000" />
       <workItem from="1587224183346" duration="85000" />
       <workItem from="1587224303277" duration="1026000" />
-      <workItem from="1587322482691" duration="4544000" />
+      <workItem from="1587322482691" duration="4676000" />
     </task>
     <servers />
   </component>
