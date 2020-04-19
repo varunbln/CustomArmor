@@ -29,6 +29,6 @@ Set when they wear ALL FOUR pieces: Helmet, Chestplate, Leggings and Boots of th
 - [ ] Rainbow Armor Sets
 - [ ] Complex AND OR equations allowing insanely customizable abilities
 ## Showcase:
-![AssasinSet](/resources/AssassinSet.png)\
-![ExampleSet](/resources/ExampleSet.png)\
-![WearingAqua](/resources/WearingAqua.png)
+![AssasinSet](/images/AssassinSet.png)\
+![ExampleSet](/images/ExampleSet.png)\
+![WearingAqua](/images/WearingAqua.png)
