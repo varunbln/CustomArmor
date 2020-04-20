@@ -2,7 +2,6 @@
 
 namespace Heisenburger69\BurgerCustomArmor;
 
-use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DamageNegationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DefensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\OffensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
@@ -13,8 +12,11 @@ use Heisenburger69\BurgerCustomArmor\Utils\EquipmentUtils;
 use Heisenburger69\BurgerCustomArmor\Utils\Utils;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\item\Item;
 use pocketmine\Player;
 
 class EventListener implements Listener
@@ -34,20 +36,49 @@ class EventListener implements Listener
     }
 
     /**
+     * @param PlayerJoinEvent $event
+     * @priority HIGH
+     */
+    public function onJoin(PlayerJoinEvent $event): void
+    {
+        EquipmentUtils::updateSetUsage($event->getPlayer());
+    }
+
+    /**
+     * Removes the user from the array of players using CustomSets to prevent wasting memory
+     *
+     * @param PlayerQuitEvent $event
+     * @priority HIGH
+     */
+    public function onQuit(PlayerQuitEvent $event): void
+    {
+        foreach (Main::$instance->using as $setName => $players) {
+            if(!is_array($players)) {
+                continue;
+            }
+            foreach ($players as $playerName => $using) {
+                if($playerName !== $event->getPlayer()->getName()) continue;
+                unset(Main::$instance->using[$setName][$playerName]);
+            }
+        }
+        //TODO: Do I call CustomSetUnequippedEvent here? Seems kinda redundant to do so once the player has quit.
+    }
+
+    /**
      * @param EntityDamageByEntityEvent $event
      */
-    public function onDefensiveAbility(EntityDamageByEntityEvent $event)
+    public function onDefensiveAbility(EntityDamageByEntityEvent $event): void
     {
         $player = $event->getEntity();
         $damager = $event->getDamager();
-        if(!$player instanceof Player || !$damager instanceof Player) {
+        if (!$player instanceof Player || !$damager instanceof Player) {
             return;
         }
-        if(($nbt = $player->getArmorInventory()->getHelmet()->getNamedTagEntry("burgercustomarmor")) === null) {
+        if (($nbt = $player->getArmorInventory()->getHelmet()->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
         }
         $setName = $nbt->getValue();
-        if(!EquipmentUtils::canUseSet($player, $setName)) {
+        if (!EquipmentUtils::canUseSet($player, $setName)) {
             return;
         }
         $armorSet = $this->plugin->customSets[$setName];
@@ -55,7 +86,7 @@ class EventListener implements Listener
             return;
         }
         foreach ($armorSet->getAbilities() as $ability) {
-            if(!Utils::checkProtectionLevel($player->getLevel())) {
+            if (!Utils::checkProtectionLevel($player->getLevel())) {
                 return;
             }
             if ($ability instanceof DefensiveAbility && $ability->canActivate($damager)) {
@@ -71,14 +102,14 @@ class EventListener implements Listener
     {
         $player = $event->getEntity();
         $damager = $event->getDamager();
-        if(!$player instanceof Player || !$damager instanceof Player) {
+        if (!$player instanceof Player || !$damager instanceof Player) {
             return;
         }
-        if(($nbt = $damager->getArmorInventory()->getHelmet()->getNamedTagEntry("burgercustomarmor")) === null) {
+        if (($nbt = $damager->getArmorInventory()->getHelmet()->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
         }
         $setName = $nbt->getValue();
-        if(!EquipmentUtils::canUseSet($damager, $setName)) {
+        if (!EquipmentUtils::canUseSet($damager, $setName)) {
             return;
         }
         $armorSet = $this->plugin->customSets[$setName];
@@ -86,7 +117,7 @@ class EventListener implements Listener
             return;
         }
         foreach ($armorSet->getAbilities() as $ability) {
-            if(!Utils::checkProtectionLevel($player->getLevel())) {
+            if (!Utils::checkProtectionLevel($player->getLevel())) {
                 return;
             }
             if ($ability instanceof OffensiveAbility && $ability->canActivate($damager)) {
@@ -105,7 +136,7 @@ class EventListener implements Listener
             return;
         }
         $item = $event->getNewItem();
-        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null){
+        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
         }
         $setName = $nbt->getValue();
@@ -122,7 +153,7 @@ class EventListener implements Listener
         }
         ($event = new CustomSetEquippedEvent($player, $armorSet))->call();
         foreach ($armorSet->getAbilities() as $ability) {
-            if(!Utils::checkProtectionLevel($player->getLevel())) {
+            if (!Utils::checkProtectionLevel($player->getLevel())) {
                 return;
             }
             if ($ability instanceof TogglableAbility) {
@@ -141,7 +172,7 @@ class EventListener implements Listener
             return;
         }
         $item = $event->getOldItem();
-        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null){
+        if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
         }
         $setName = $nbt->getValue();
@@ -157,7 +188,7 @@ class EventListener implements Listener
         if (!$armorSet instanceof CustomArmorSet) {
             return;
         }
-        if($fullSetWorn) {
+        if ($fullSetWorn) {
             ($event = new CustomSetUnequippedEvent($player, $armorSet))->call();
             foreach ($armorSet->getAbilities() as $ability) {
                 if ($ability instanceof TogglableAbility) {

@@ -8,8 +8,6 @@ use Heisenburger69\BurgerCustomArmor\Abilities\AbilityUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Commands\CustomArmorCommand;
-use pocketmine\item\Durable;
-use pocketmine\item\Pickaxe;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Color;
 use pocketmine\utils\Config;
@@ -49,6 +47,7 @@ class Main extends PluginBase
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig();
         $this->saveResource("armorsets.yml");
+        $this->saveResource("FireCape.png");
         $this->armorSets = new Config($this->getDataFolder() . "armorsets.yml");
 
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
@@ -75,7 +74,7 @@ class Main extends PluginBase
         if (isset($properties["color"])) {
             $color = new Color($properties["color"]["r"], $properties["color"]["g"], $properties["color"]["b"]);
         }
-        
+
         $abilities = [];
         if (is_array($properties["abilities"]) && count($properties["abilities"]) > 0) {
             foreach ($properties["abilities"] as $ability => $value) {
@@ -103,4 +102,5 @@ class Main extends PluginBase
 
         $this->using[$name] = [];
     }
+
 }

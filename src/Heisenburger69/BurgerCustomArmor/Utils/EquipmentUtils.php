@@ -2,6 +2,8 @@
 
 namespace Heisenburger69\BurgerCustomArmor\Utils;
 
+use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
+use Heisenburger69\BurgerCustomArmor\Events\CustomSetEquippedEvent;
 use Heisenburger69\BurgerCustomArmor\Main;
 use pocketmine\item\Item;
 use pocketmine\Player;
@@ -87,5 +89,40 @@ class EquipmentUtils
             return true;
         }
         return false;
+    }
+
+    /**
+     * Checks the players armor and adds the player back to the array of players using CustomSets
+     *
+     * @param Player $player
+     */
+    public static function updateSetUsage(Player $player)
+    {
+        $setName = null;
+        $armorSet = null;
+        foreach ($player->getArmorInventory()->getContents() as $item) {
+            if(($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
+                continue;
+            }
+            $setName = $nbt->getValue();
+            if(!isset(Main::$instance->customSets[$setName])) {
+                continue;
+            }
+            $armorSet = Main::$instance->customSets[$setName];
+            self::addUsingSet($player, $item, $setName);
+        }
+        if($setName === null || $armorSet === null) return;
+        if(!self::canUseSet($player, $setName)) {
+            return;
+        }
+        foreach ($armorSet->getAbilities() as $ability) {
+            if (!Utils::checkProtectionLevel($player->getLevel())) {
+                return;
+            }
+            if ($ability instanceof TogglableAbility) {
+                $ability->on($player);
+            }
+        }
+        ($event = new CustomSetEquippedEvent($player, $armorSet))->call();
     }
 }

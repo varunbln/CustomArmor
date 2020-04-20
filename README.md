@@ -13,6 +13,7 @@ Players can be given Custom Armor Sets with the command /customarmor
 * Give players permissions only while they wear a specific armor set, allow players to fly only while having specific armor on!
 * Easy to Configure with 3 example Armor Sets already made and an in-depth explanation of every ability.
 * RPG style abilities granting players perks like enchanced damage but lower defense stats on their armor.
+* Grant players special custom capes only when an entire Armor Set is worn
 * Whitelist or Blacklist abilities from working in specific worlds.
 * Infinite customization and every aspect of the Armor Set is configurable.
 * Granting players Custom Armor Sets is super easy and can be done with just a simple command.

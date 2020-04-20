@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/FireCape.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/CapeAbility.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/armorsets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/armorsets.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/Utils.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +51,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Reactive/Offensive" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\resources" />
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\images" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Utils" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Commands" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Togglable" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -90,7 +98,10 @@
       <workItem from="1587322482691" duration="5076000" />
       <workItem from="1587327667784" duration="927000" />
       <workItem from="1587328841643" duration="325000" />
-      <workItem from="1587330327078" duration="258000" />
+      <workItem from="1587330327078" duration="1384000" />
+      <workItem from="1587331926959" duration="8000" />
+      <workItem from="1587385216777" duration="438000" />
+      <workItem from="1587385700478" duration="1933000" />
     </task>
     <servers />
   </component>

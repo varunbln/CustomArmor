@@ -166,7 +166,7 @@ Assassin:
     #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
     #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
     #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
-
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
     # Makes player deal 10% more damage overall. Set negative to deal less damage.
     DamageAmplification: 0.1
     # Makes player deal 20% more damage using swords. Set negative to deal less damage.
@@ -175,6 +175,8 @@ Assassin:
     AxeAmplification: 0.15
     # Makes player deal 50% more damage using bows. Set negative to deal less damage.
     BowAmplification: 0.5
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
 
   color:
     r: 255

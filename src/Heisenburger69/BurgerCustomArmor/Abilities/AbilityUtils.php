@@ -11,6 +11,7 @@ use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\AxeAmplificati
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\BowAmplificationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\DamageAmplificationAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\SwordAmplificationAbility;
+use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\CapeAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\EffectAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\PermissionAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\ScaleAbility;
@@ -22,34 +23,36 @@ class AbilityUtils
 
     /**
      * @param string $ability
-     * @param mixed $values
+     * @param mixed $value
      * @return ArmorAbility|null
      */
-    public static function getAbility(string $ability, $values): ?ArmorAbility
+    public static function getAbility(string $ability, $value): ?ArmorAbility
     {
         switch ($ability) {
             case "Scale":
-                return new ScaleAbility($values);
+                return new ScaleAbility($value);
             case "Permission":
-                return new PermissionAbility($values);
+                return new PermissionAbility($value);
             case "Knockback":
-                return new KnockbackNegationAbility($values);
+                return new KnockbackNegationAbility($value);
             case "DamageNegation":
-                return new DamageNegationAbility($values);
+                return new DamageNegationAbility($value);
             case "SwordNegation":
-                return new SwordNegationAbility($values);
+                return new SwordNegationAbility($value);
             case "AxeNegation":
-                return new AxeNegationAbility($values);
+                return new AxeNegationAbility($value);
             case "BowNegation":
-                return new BowNegationAbility($values);
+                return new BowNegationAbility($value);
             case "DamageAmplification":
-                return new DamageAmplificationAbility($values);
+                return new DamageAmplificationAbility($value);
             case "SwordAmplification":
-                return new SwordAmplificationAbility($values);
+                return new SwordAmplificationAbility($value);
             case "AxeAmplification":
-                return new AxeAmplificationAbility($values);
+                return new AxeAmplificationAbility($value);
             case "BowAmplification":
-                return new BowAmplificationAbility($values);
+                return new BowAmplificationAbility($value);
+            case "Cape":
+                return new CapeAbility($value);
             default:
                 return null;
         }
