@@ -15,8 +15,10 @@ use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\CapeAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\EffectAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\PermissionAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\ScaleAbility;
+use Heisenburger69\BurgerCustomArmor\Main;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
+use pocketmine\Server;
 
 class AbilityUtils
 {
@@ -52,6 +54,10 @@ class AbilityUtils
             case "BowAmplification":
                 return new BowAmplificationAbility($value);
             case "Cape":
+                if (!extension_loaded("gd")) {
+                    Server::getInstance()->getLogger()->info(Main::PREFIX . ": gd extension missing! Cape Ability Disabled.");
+                    return null;
+                }
                 return new CapeAbility($value);
             default:
                 return null;

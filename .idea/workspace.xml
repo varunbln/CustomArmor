@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,16 +46,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\resources" />
-      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\images" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Utils" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Commands" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive" />
       <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Togglable" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor" />
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\resources" />
+      <recent name="C:\Users\varun\Downloads\Plugs\ArcadiumHCFMain\ArcadiumHCFMain\src\friscowz\hc\utils\ShockNetwork\plugins\BurgerCustomArmor\src\Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,6 +97,8 @@
       <workItem from="1587385700478" duration="2055000" />
       <workItem from="1587388905148" duration="421000" />
       <workItem from="1587392890855" duration="15000" />
+      <workItem from="1587464740615" duration="298000" />
+      <workItem from="1587466014944" duration="364000" />
     </task>
     <servers />
   </component>
