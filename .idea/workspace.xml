@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371a7e78-5bb9-4a46-8ac0-092433503aae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/FireCape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/Togglable/CapeAbility.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/armorsets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/armorsets.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Abilities/AbilityUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/EquipmentUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/Utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/Utils/Utils.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +42,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -101,7 +92,9 @@
       <workItem from="1587330327078" duration="1384000" />
       <workItem from="1587331926959" duration="8000" />
       <workItem from="1587385216777" duration="438000" />
-      <workItem from="1587385700478" duration="1933000" />
+      <workItem from="1587385700478" duration="2055000" />
+      <workItem from="1587388905148" duration="421000" />
+      <workItem from="1587392890855" duration="15000" />
     </task>
     <servers />
   </component>
