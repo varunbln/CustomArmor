@@ -8,7 +8,7 @@ Players can be given Custom Armor Sets with the command /customarmor
 ## Features:
 * Create an infinite number of Custom Armor Sets.
 * Over 15 different abilities you can grant to different Armor Sets.
-* Modify Armor Piece defense points, make Leather Armor two times as strong as Diamond Armor!
+* Modify Armor Piece defense points, make Leather Armor as strong as Diamond Armor!
 * Over 16 million possible colors you can give Armor Sets.
 * Give players permissions only while they wear a specific armor set, allow players to fly only while having specific armor on!
 * Easy to Configure with 3 example Armor Sets already made and an in-depth explanation of every ability.

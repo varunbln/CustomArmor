@@ -5,6 +5,7 @@ namespace Heisenburger69\BurgerCustomArmor;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DefensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\OffensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
+use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetEquippedEvent;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetUnequippedEvent;
@@ -12,6 +13,7 @@ use Heisenburger69\BurgerCustomArmor\Utils\EquipmentUtils;
 use Heisenburger69\BurgerCustomArmor\Utils\Utils;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -53,11 +55,11 @@ class EventListener implements Listener
     public function onQuit(PlayerQuitEvent $event): void
     {
         foreach (Main::$instance->using as $setName => $players) {
-            if(!is_array($players)) {
+            if (!is_array($players)) {
                 continue;
             }
             foreach ($players as $playerName => $using) {
-                if($playerName !== $event->getPlayer()->getName()) continue;
+                if ($playerName !== $event->getPlayer()->getName()) continue;
                 unset(Main::$instance->using[$setName][$playerName]);
             }
         }
@@ -94,6 +96,37 @@ class EventListener implements Listener
             }
         }
     }
+
+    /**
+     * Overwriting the defense points of each armor piece if they're part of a Custom Armor Set
+     *
+     * @param EntityDamageEvent $event
+     */
+    public function onModifier(EntityDamageEvent $event): void
+    {
+        $player = $event->getEntity();
+        if (!$player instanceof Player) {
+            return;
+        }
+        $items = $player->getArmorInventory()->getContents();
+        $totalP = 0;
+        foreach ($items as $item) {
+            $itemP = $item->getDefensePoints();
+            if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) !== null) {
+                $armorSet = $this->plugin->customSets[$nbt->getValue()];
+                if (Utils::isHelmet($item)) {
+                    $itemP = $armorSet->getHelmetDefensePoints();
+                } elseif (Utils::isChestplate($item)) {
+                    $itemP = $armorSet->getChestplateDefensePoints();
+                } elseif (Utils::isLeggings($item)) {
+                    $itemP = $armorSet->getLeggingsDefensePoints();
+                } elseif (Utils::isBoots($item)) {
+                    $itemP = $armorSet->getBootsDefensePoints();
+                }
+            }
+            $totalP += $itemP;
+        }
+        $event->setModifier(-$event->getFinalDamage() * $totalP * 0.04, EntityDamageEvent::MODIFIER_ARMOR);}
 
     /**
      * @param EntityDamageByEntityEvent $event

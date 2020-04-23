@@ -44,6 +44,7 @@ Example:
   # This way, you can make leather armor as strong as diamond :D
   # You can google the default strength value of each piece of every tier
   # In this example, I'm setting the strength to the strength of diamond armor.
+  # WARNING: The sum of these cannot exceed 20!
   strength:
     helmet: 3
     chestplate: 8
@@ -116,10 +117,10 @@ Tank:
     b: 255
 
   strength:
-    helmet: 4
-    chestplate: 10
-    leggings: 7
-    boots: 4
+    helmet: 3
+    chestplate: 8
+    leggings: 6
+    boots: 3
 
   name:
     helmet: "&l&6Tank Helmet"

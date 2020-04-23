@@ -171,76 +171,66 @@ class CustomArmorSet
     }
 
     /**
-     * @param EntityDamageEvent $event
      * @return float
      */
-    public function getArmorModifierPoints(EntityDamageEvent $event): float
+    public function getArmorDefensePoints(): float
     {
         return
-            $this->getHelmetModifier($event) +
-            $this->getChestplateModifier($event) +
-            $this->getLeggingsModifier($event) +
-            $this->getBootsModifier($event);
+            $this->getHelmetDefensePoints() +
+            $this->getChestplateDefensePoints() +
+            $this->getLeggingsDefensePoints() +
+            $this->getBootsDefensePoints();
     }
 
     /**
-     * @param EntityDamageEvent $event
      * @return float
      */
-    public function getHelmetModifier(EntityDamageEvent $event): float
+    public function getHelmetDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getHelmetFromTier($this->tier)->getDefensePoints();
         if(isset($this->strength["helmet"])) {
             $itemPoints = $this->strength["helmet"];
         }
-        $totalPoints = ArmorSetUtils::getTotalStrengthPoints($this->tier, $this->strength);
-
-        return -$event->getFinalDamage() * $itemPoints * 1 / $totalPoints;
+        return $itemPoints;
     }
 
     /**
-     * @param EntityDamageEvent $event
      * @return float
      */
-    public function getChestplateModifier(EntityDamageEvent $event): float
+    public function getChestplateDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getChestplateFromTier($this->tier)->getDefensePoints();
         if(isset($this->strength["chestplate"])) {
             $itemPoints = $this->strength["chestplate"];
         }
-        $totalPoints = ArmorSetUtils::getTotalStrengthPoints($this->tier, $this->strength);
 
-        return -$event->getFinalDamage() * $itemPoints * 1 / $totalPoints;
+        return $itemPoints;
     }
 
     /**
-     * @param EntityDamageEvent $event
      * @return float
      */
-    public function getLeggingsModifier(EntityDamageEvent $event): float
+    public function getLeggingsDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getLeggingsFromTier($this->tier)->getDefensePoints();
         if(isset($this->strength["leggings"])) {
             $itemPoints = $this->strength["leggings"];
         }
-        $totalPoints = ArmorSetUtils::getTotalStrengthPoints($this->tier, $this->strength);
 
-        return -$event->getFinalDamage() * $itemPoints * 1 / $totalPoints;
+        return $itemPoints;
     }
 
     /**
-     * @param EntityDamageEvent $event
      * @return float
      */
-    public function getBootsModifier(EntityDamageEvent $event): float
+    public function getBootsDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getBootsFromTier($this->tier)->getDefensePoints();
         if(isset($this->strength["boots"])) {
             $itemPoints = $this->strength["boots"];
         }
-        $totalPoints = ArmorSetUtils::getTotalStrengthPoints($this->tier, $this->strength);
 
-        return -$event->getFinalDamage() * $itemPoints * 1 / $totalPoints;
+        return $itemPoints;
     }
 
     /**
