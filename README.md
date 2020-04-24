@@ -16,6 +16,7 @@ Players can be given Custom Armor Sets with the command /customarmor
 * Grant players special custom capes only when an entire Armor Set is worn
 * Whitelist or Blacklist abilities from working in specific worlds.
 * Infinite customization and every aspect of the Armor Set is configurable.
+* Changeable item durability to let CustomArmor have more durability points!
 * Granting players Custom Armor Sets is super easy and can be done with just a simple command.
 * Custom Events for Developers to do their own magic whenever Custom Armor Sets are activated or deactivated.
 ## Ideas for Server Owners:
@@ -29,7 +30,7 @@ Players can be given Custom Armor Sets with the command /customarmor
 - [ ] Allow mix-and-match of tiers rather than forcing an entire set to be one tier
 - [ ] Create a Wiki for more in-depth understanding of Armor Abilities
 - [ ] Custom crafting for Armor Pieces
-- [ ] Custom durability values for Armor Pieces
+- [x] Custom durability values for Armor Pieces
 - [ ] Create an API for creation and registration of Abilities and Armor Sets
 - [ ] Rainbow Armor Sets
 - [ ] Complex AND OR equations allowing insanely customizable abilities
