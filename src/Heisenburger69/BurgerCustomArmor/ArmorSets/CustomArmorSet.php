@@ -132,12 +132,6 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getChestplateLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if (isset($this->durabilities["chestplate"])) {
-            $durability = (int)$this->durabilities["chestplate"];
-            // $item is an instance of an overridden class of the item with the method.
-            $item->setMaxDurability($durability);
-        }
-
         if ($item instanceof LeatherTunic) {
             $item->setCustomColor($this->color);
         }
@@ -156,12 +150,6 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getLeggingsLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if (isset($this->durabilities["leggings"])) {
-            $durability = (int)$this->durabilities["leggings"];
-            // $item is an instance of an overridden class of the item with the method.
-            $item->setMaxDurability($durability);
-        }
-
         if ($item instanceof LeatherPants) {
             $item->setCustomColor($this->color);
         }
@@ -179,12 +167,6 @@ class CustomArmorSet
 
         $lore = ArmorSetUtils::getBootsLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
-
-        if (isset($this->durabilities["boots"])) {
-            $durability = (int)$this->durabilities["boots"];
-            // $item is an instance of an overridden class of the item with the method.
-            $item->setMaxDurability($durability);
-        }
 
         if ($item instanceof LeatherBoots) {
             $item->setCustomColor($this->color);
