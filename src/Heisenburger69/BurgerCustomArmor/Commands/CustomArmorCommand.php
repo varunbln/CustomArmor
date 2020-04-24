@@ -37,21 +37,21 @@ class CustomArmorCommand extends PluginCommand
             $sender->sendMessage(Main::PREFIX . C::DARK_RED . "Insufficient Permission.");
             return;
         }
-        if(count($args) !== 3) {
+        if (count($args) !== 3) {
             $sender->sendMessage(Main::PREFIX . C::RED . $this->getUsage());
             return;
         }
-        if(!isset($this->plugin->customSets[$args[0]])) {
+        if (!isset($this->plugin->customSets[$args[0]])) {
             $sender->sendMessage(Main::PREFIX . C::RED . "The given Armor Set does not exist.");
             return;
         }
         $armorSet = $this->plugin->customSets[$args[0]];
-        if(!$armorSet instanceof CustomArmorSet) {
+        if (!$armorSet instanceof CustomArmorSet) {
             $sender->sendMessage(Main::PREFIX . C::RED . "The given Armor Set does not exist.");
             return;
         }
         $playerName = $args[2];
-        if(($player = $this->plugin->getServer()->getPlayerExact($playerName)) === null) {
+        if (($player = $this->plugin->getServer()->getPlayerExact($playerName)) === null) {
             $sender->sendMessage(Main::PREFIX . C::RED . "The given player is offline!");
             return;
         }

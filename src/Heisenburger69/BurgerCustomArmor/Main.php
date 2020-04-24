@@ -8,6 +8,27 @@ use Heisenburger69\BurgerCustomArmor\Abilities\AbilityUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Commands\CustomArmorCommand;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\{Chain\ChainBoots,
+    Chain\ChainChestplate,
+    Chain\ChainHelmet,
+    Chain\ChainLeggings,
+    Diamond\DiamondBoots,
+    Diamond\DiamondChestplate,
+    Diamond\DiamondHelmet,
+    Diamond\DiamondLeggings,
+    Gold\GoldBoots,
+    Gold\GoldChestplate,
+    Gold\GoldHelmet,
+    Gold\GoldLeggings,
+    Iron\IronBoots,
+    Iron\IronChestplate,
+    Iron\IronHelmet,
+    Iron\IronLeggings,
+    Leather\LeatherBoots,
+    Leather\LeatherCap,
+    Leather\LeatherPants,
+    Leather\LeatherTunic};
+use pocketmine\item\ItemFactory;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Color;
 use pocketmine\utils\Config;
@@ -50,6 +71,7 @@ class Main extends PluginBase
         $this->saveResource("FireCape.png");
         $this->armorSets = new Config($this->getDataFolder() . "armorsets.yml");
 
+        $this->registerCustomItems();
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         $this->registerArmorSets();
         $this->getServer()->getCommandMap()->register("BurgerCustomArmor", new CustomArmorCommand($this));
@@ -95,12 +117,46 @@ class Main extends PluginBase
             $abilities,
             $color,
             $properties["strength"],
+            isset($properties["durability"]) ? $properties["durability"] : [],
             $properties["name"],
             $properties["lore"],
             $properties["setbonuslore"]
         );
 
         $this->using[$name] = [];
+    }
+
+    private function registerCustomItems(): void
+    {
+        $items = [
+            new LeatherCap(),
+            new LeatherTunic(),
+            new LeatherPants(),
+            new LeatherBoots(),
+
+            new ChainHelmet(),
+            new ChainChestplate(),
+            new ChainLeggings(),
+            new ChainBoots(),
+
+            new GoldHelmet(),
+            new GoldChestplate(),
+            new GoldLeggings(),
+            new GoldBoots(),
+
+            new IronHelmet(),
+            new IronChestplate(),
+            new IronLeggings(),
+            new IronBoots(),
+
+            new DiamondHelmet(),
+            new DiamondChestplate(),
+            new DiamondLeggings(),
+            new DiamondBoots(),
+        ];
+        foreach ($items as $item) {
+            ItemFactory::registerItem($item, true);
+        }
     }
 
 }

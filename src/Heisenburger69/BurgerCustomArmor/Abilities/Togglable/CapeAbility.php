@@ -3,7 +3,6 @@
 namespace Heisenburger69\BurgerCustomArmor\Abilities\Togglable;
 
 use Heisenburger69\BurgerCustomArmor\Utils\Utils;
-use pocketmine\entity\EffectInstance;
 use pocketmine\Player;
 
 class CapeAbility extends TogglableAbility

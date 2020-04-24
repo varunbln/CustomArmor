@@ -9,7 +9,7 @@ class SwordAmplificationAbility extends DamageAmplificationAbility
 {
     public function canActivate(Player $damager): bool
     {
-        if($damager->getInventory()->getItemInHand() instanceof Sword) {
+        if ($damager->getInventory()->getItemInHand() instanceof Sword) {
             return true;
         }
         return false;

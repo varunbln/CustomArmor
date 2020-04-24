@@ -26,7 +26,7 @@ class DamageNegationAbility extends DefensiveAbility
     public function activate(EntityDamageByEntityEvent $event)
     {
         $baseDmg = $event->getBaseDamage() - ($event->getBaseDamage() * $this->negation);
-        if($baseDmg < 0) $baseDmg = 0;
+        if ($baseDmg < 0) $baseDmg = 0;
         $event->setBaseDamage($baseDmg);
     }
 

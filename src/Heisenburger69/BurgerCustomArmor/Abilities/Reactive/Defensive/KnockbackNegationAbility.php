@@ -2,9 +2,7 @@
 
 namespace Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive;
 
-use Heisenburger69\BurgerCustomArmor\Abilities\ArmorAbility;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\item\Sword;
 use pocketmine\Player;
 
 class KnockbackNegationAbility extends DefensiveAbility

@@ -33,6 +33,7 @@ class EquipmentUtils
             Main::$instance->using[$setName][$playerName]["boots"] = false;
         }
     }
+
     /**
      * @param Player $player
      * @param Item $item
@@ -79,8 +80,8 @@ class EquipmentUtils
     public static function canUseSet(Player $player, string $setName): bool
     {
         $playerName = $player->getName();
-        if(!isset(Main::$instance->using[$setName][$playerName])) return false;
-        if(
+        if (!isset(Main::$instance->using[$setName][$playerName])) return false;
+        if (
             Main::$instance->using[$setName][$playerName]["helmet"] === true &&
             Main::$instance->using[$setName][$playerName]["chestplate"] === true &&
             Main::$instance->using[$setName][$playerName]["leggings"] === true &&
@@ -101,18 +102,18 @@ class EquipmentUtils
         $setName = null;
         $armorSet = null;
         foreach ($player->getArmorInventory()->getContents() as $item) {
-            if(($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
+            if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
                 continue;
             }
             $setName = $nbt->getValue();
-            if(!isset(Main::$instance->customSets[$setName])) {
+            if (!isset(Main::$instance->customSets[$setName])) {
                 continue;
             }
             $armorSet = Main::$instance->customSets[$setName];
             self::addUsingSet($player, $item, $setName);
         }
-        if($setName === null || $armorSet === null) return;
-        if(!self::canUseSet($player, $setName)) {
+        if ($setName === null || $armorSet === null) return;
+        if (!self::canUseSet($player, $setName)) {
             return;
         }
         foreach ($armorSet->getAbilities() as $ability) {

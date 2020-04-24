@@ -2,6 +2,26 @@
 
 namespace Heisenburger69\BurgerCustomArmor\ArmorSets;
 
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherCap;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherPants;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherTunic;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat as C;
 
@@ -38,15 +58,15 @@ class ArmorSetUtils
     {
         switch ($tier) {
             case CustomArmorSet::TIER_DIAMOND:
-                return Item::get(Item::DIAMOND_HELMET);
+                return new DiamondHelmet();
             case CustomArmorSet::TIER_IRON:
-                return Item::get(Item::IRON_HELMET);
+                return new IronHelmet();
             case CustomArmorSet::TIER_GOLD:
-                return Item::get(Item::GOLD_HELMET);
+                return new GoldHelmet();
             case CustomArmorSet::TIER_CHAIN:
-                return Item::get(Item::CHAINMAIL_HELMET);
+                return new ChainHelmet();
             case CustomArmorSet::TIER_LEATHER:
-                return Item::get(Item::LEATHER_HELMET);
+                return new LeatherCap();
             default:
                 return Item::get(Item::AIR);
         }
@@ -60,15 +80,15 @@ class ArmorSetUtils
     {
         switch ($tier) {
             case CustomArmorSet::TIER_DIAMOND:
-                return Item::get(Item::DIAMOND_CHESTPLATE);
+                return new DiamondChestplate();
             case CustomArmorSet::TIER_IRON:
-                return Item::get(Item::IRON_CHESTPLATE);
+                return new IronChestplate();
             case CustomArmorSet::TIER_GOLD:
-                return Item::get(Item::GOLD_CHESTPLATE);
+                return new GoldChestplate();
             case CustomArmorSet::TIER_CHAIN:
-                return Item::get(Item::CHAIN_CHESTPLATE);
+                return new ChainChestplate();
             case CustomArmorSet::TIER_LEATHER:
-                return Item::get(Item::LEATHER_CHESTPLATE);
+                return new LeatherTunic();
             default:
                 return Item::get(Item::AIR);
         }
@@ -82,15 +102,15 @@ class ArmorSetUtils
     {
         switch ($tier) {
             case CustomArmorSet::TIER_DIAMOND:
-                return Item::get(Item::DIAMOND_LEGGINGS);
+                return new DiamondLeggings();
             case CustomArmorSet::TIER_IRON:
-                return Item::get(Item::IRON_LEGGINGS);
+                return new IronLeggings();
             case CustomArmorSet::TIER_GOLD:
-                return Item::get(Item::GOLD_LEGGINGS);
+                return new GoldLeggings();
             case CustomArmorSet::TIER_CHAIN:
-                return Item::get(Item::CHAIN_LEGGINGS);
+                return new ChainLeggings();
             case CustomArmorSet::TIER_LEATHER:
-                return Item::get(Item::LEATHER_LEGGINGS);
+                return new LeatherPants();
             default:
                 return Item::get(Item::AIR);
         }
@@ -104,15 +124,15 @@ class ArmorSetUtils
     {
         switch ($tier) {
             case CustomArmorSet::TIER_DIAMOND:
-                return Item::get(Item::DIAMOND_BOOTS);
+                return new DiamondBoots();
             case CustomArmorSet::TIER_IRON:
-                return Item::get(Item::IRON_BOOTS);
+                return new IronBoots();
             case CustomArmorSet::TIER_GOLD:
-                return Item::get(Item::GOLD_BOOTS);
+                return new GoldBoots();
             case CustomArmorSet::TIER_CHAIN:
-                return Item::get(Item::CHAIN_BOOTS);
+                return new ChainBoots();
             case CustomArmorSet::TIER_LEATHER:
-                return Item::get(Item::LEATHER_BOOTS);
+                return new LeatherBoots();
             default:
                 return Item::get(Item::AIR);
         }
@@ -124,7 +144,7 @@ class ArmorSetUtils
         $itemLore = [];
         $setBonus = implode("\n", $setBonusLore);
 
-        if(isset($lores["helmet"])) {
+        if (isset($lores["helmet"])) {
             $itemLore = $lores["helmet"];
         }
         foreach ($itemLore as $line) {
@@ -140,7 +160,7 @@ class ArmorSetUtils
         $itemLore = [];
         $setBonus = implode("\n", $setBonusLore);
 
-        if(isset($lores["chestplate"])) {
+        if (isset($lores["chestplate"])) {
             $itemLore = $lores["chestplate"];
         }
         foreach ($itemLore as $line) {
@@ -156,7 +176,7 @@ class ArmorSetUtils
         $itemLore = [];
         $setBonus = implode("\n", $setBonusLore);
 
-        if(isset($lores["leggings"])) {
+        if (isset($lores["leggings"])) {
             $itemLore = $lores["leggings"];
         }
         foreach ($itemLore as $line) {
@@ -172,7 +192,7 @@ class ArmorSetUtils
         $itemLore = [];
         $setBonus = implode("\n", $setBonusLore);
 
-        if(isset($lores["boots"])) {
+        if (isset($lores["boots"])) {
             $itemLore = $lores["boots"];
         }
         foreach ($itemLore as $line) {
@@ -185,22 +205,22 @@ class ArmorSetUtils
     public static function getTotalStrengthPoints(int $tier, array $strength): int
     {
         $helmetStrength = self::getHelmetFromTier($tier)->getDefensePoints();
-        if(isset($strength["helmet"])) {
+        if (isset($strength["helmet"])) {
             $helmetStrength = $strength["helmet"];
         }
 
         $chestplateStrength = self::getChestplateFromTier($tier)->getDefensePoints();
-        if(isset($strength["chestplate"])) {
+        if (isset($strength["chestplate"])) {
             $chestplateStrength = $strength["chestplate"];
         }
 
         $leggingsStrength = self::getLeggingsFromTier($tier)->getDefensePoints();
-        if(isset($strength["leggings"])) {
+        if (isset($strength["leggings"])) {
             $leggingsStrength = $strength["leggings"];
         }
 
         $bootsStrength = self::getBootsFromTier($tier)->getDefensePoints();
-        if(isset($strength["boots"])) {
+        if (isset($strength["boots"])) {
             $helmetStrength = $strength["boots"];
         }
 

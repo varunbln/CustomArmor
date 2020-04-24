@@ -5,7 +5,6 @@ namespace Heisenburger69\BurgerCustomArmor;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DefensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\OffensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
-use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetEquippedEvent;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetUnequippedEvent;
@@ -14,11 +13,9 @@ use Heisenburger69\BurgerCustomArmor\Utils\Utils;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
-use pocketmine\item\Item;
 use pocketmine\Player;
 
 class EventListener implements Listener
@@ -126,7 +123,8 @@ class EventListener implements Listener
             }
             $totalP += $itemP;
         }
-        $event->setModifier(-$event->getFinalDamage() * $totalP * 0.04, EntityDamageEvent::MODIFIER_ARMOR);}
+        $event->setModifier(-$event->getFinalDamage() * $totalP * 0.04, EntityDamageEvent::MODIFIER_ARMOR);
+    }
 
     /**
      * @param EntityDamageByEntityEvent $event

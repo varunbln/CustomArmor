@@ -9,7 +9,7 @@ class AxeAmplificationAbility extends DamageAmplificationAbility
 {
     public function canActivate(Player $damager): bool
     {
-        if($damager->getInventory()->getItemInHand() instanceof Axe) {
+        if ($damager->getInventory()->getItemInHand() instanceof Axe) {
             return true;
         }
         return false;

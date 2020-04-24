@@ -3,28 +3,28 @@
 namespace Heisenburger69\BurgerCustomArmor\Utils;
 
 use Heisenburger69\BurgerCustomArmor\Main;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Chain\ChainLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Diamond\DiamondLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Gold\GoldLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronChestplate;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronHelmet;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Iron\IronLeggings;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherBoots;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherCap;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherPants;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\Leather\LeatherTunic;
 use pocketmine\entity\Skin;
-use pocketmine\item\ChainBoots;
-use pocketmine\item\ChainChestplate;
-use pocketmine\item\ChainHelmet;
-use pocketmine\item\ChainLeggings;
-use pocketmine\item\DiamondBoots;
-use pocketmine\item\DiamondChestplate;
-use pocketmine\item\DiamondHelmet;
-use pocketmine\item\DiamondLeggings;
-use pocketmine\item\GoldBoots;
-use pocketmine\item\GoldChestplate;
-use pocketmine\item\GoldHelmet;
-use pocketmine\item\GoldLeggings;
-use pocketmine\item\IronBoots;
-use pocketmine\item\IronChestplate;
-use pocketmine\item\IronHelmet;
-use pocketmine\item\IronLeggings;
 use pocketmine\item\Item;
-use pocketmine\item\LeatherBoots;
-use pocketmine\item\LeatherCap;
-use pocketmine\item\LeatherPants;
-use pocketmine\item\LeatherTunic;
 use pocketmine\level\Level;
 use pocketmine\Player;
 
@@ -66,7 +66,7 @@ class Utils
     {
         $img = @imagecreatefrompng(Main::$instance->getDataFolder() . $fileName);
         $bytes = '';
-        $l = (int) @getimagesize(Main::$instance->getDataFolder() . $fileName)[1];
+        $l = (int)@getimagesize(Main::$instance->getDataFolder() . $fileName)[1];
         for ($y = 0; $y < $l; $y++) {
             for ($x = 0; $x < 64; $x++) {
                 $rgba = @imagecolorat($img, $x, $y);

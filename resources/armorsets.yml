@@ -51,6 +51,16 @@ Example:
     leggings: 6
     boots: 3
 
+  # Specify durability points for each item here.
+  # You can google the default durability of each piece of every tier.
+  # The durability points set here are equal to diamond armor.
+  # You can set this value as high or low as you want.
+  durability:
+    helmet: 364
+    chestplate: 529
+    leggings: 496
+    boots: 430
+
   # This is the name of each armor piece in the set.
   name:
     helmet: "&l&bExample Helmet"
@@ -122,6 +132,12 @@ Tank:
     leggings: 6
     boots: 3
 
+  durability:
+    helmet: 720
+    chestplate: 1040
+    leggings: 1000
+    boots: 860
+
   name:
     helmet: "&l&6Tank Helmet"
     chestplate: "&l&6Tank Chestplate"
@@ -189,6 +205,12 @@ Assassin:
     chestplate: 6
     leggings: 4
     boots: 2
+
+  durability:
+    helmet: 200
+    chestplate: 400
+    leggings: 300
+    boots: 200
 
   name:
     helmet: "&l&cAssassin Helmet"

@@ -9,7 +9,7 @@ class BowNegationAbility extends DamageNegationAbility
 {
     public function canActivate(Player $damager): bool
     {
-        if($damager->getInventory()->getItemInHand() instanceof Bow) {
+        if ($damager->getInventory()->getItemInHand() instanceof Bow) {
             return true;
         }
         return false;

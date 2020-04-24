@@ -3,7 +3,6 @@
 namespace Heisenburger69\BurgerCustomArmor\ArmorSets;
 
 use Heisenburger69\BurgerCustomArmor\Abilities\ArmorAbility;
-use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\item\Item;
 use pocketmine\item\LeatherBoots;
 use pocketmine\item\LeatherCap;
@@ -58,6 +57,10 @@ class CustomArmorSet
      * @var array
      */
     private $setBonusLore;
+    /**
+     * @var array
+     */
+    public $durabilities;
 
     /**
      * CustomArmorSet constructor.
@@ -67,11 +70,12 @@ class CustomArmorSet
      * @param array $abilities
      * @param Color $color
      * @param array $strength
+     * @param array $durabilities
      * @param array $names
      * @param array $lores
      * @param array $setBonusLore
      */
-    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $names, array $lores, array $setBonusLore)
+    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $durabilities, array $names, array $lores, array $setBonusLore)
     {
         $this->name = $name;
         $this->tier = $tier;
@@ -79,6 +83,7 @@ class CustomArmorSet
         $this->abilities = $abilities;
         $this->color = $color;
         $this->strength = $strength;
+        $this->durabilities = $durabilities;
         $this->names = $names;
         $this->lores = $lores;
         $this->setBonusLore = $setBonusLore;
@@ -109,7 +114,7 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getHelmetLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if($item instanceof LeatherCap) {
+        if ($item instanceof LeatherCap) {
             $item->setCustomColor($this->color);
         }
 
@@ -127,7 +132,13 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getChestplateLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if($item instanceof LeatherTunic) {
+        if (isset($this->durabilities["chestplate"])) {
+            $durability = (int)$this->durabilities["chestplate"];
+            // $item is an instance of an overridden class of the item with the method.
+            $item->setMaxDurability($durability);
+        }
+
+        if ($item instanceof LeatherTunic) {
             $item->setCustomColor($this->color);
         }
 
@@ -145,7 +156,13 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getLeggingsLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if($item instanceof LeatherPants) {
+        if (isset($this->durabilities["leggings"])) {
+            $durability = (int)$this->durabilities["leggings"];
+            // $item is an instance of an overridden class of the item with the method.
+            $item->setMaxDurability($durability);
+        }
+
+        if ($item instanceof LeatherPants) {
             $item->setCustomColor($this->color);
         }
 
@@ -163,7 +180,13 @@ class CustomArmorSet
         $lore = ArmorSetUtils::getBootsLore($this->lores, $this->setBonusLore);
         $item->setLore($lore);
 
-        if($item instanceof LeatherBoots) {
+        if (isset($this->durabilities["boots"])) {
+            $durability = (int)$this->durabilities["boots"];
+            // $item is an instance of an overridden class of the item with the method.
+            $item->setMaxDurability($durability);
+        }
+
+        if ($item instanceof LeatherBoots) {
             $item->setCustomColor($this->color);
         }
 
@@ -188,7 +211,7 @@ class CustomArmorSet
     public function getHelmetDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getHelmetFromTier($this->tier)->getDefensePoints();
-        if(isset($this->strength["helmet"])) {
+        if (isset($this->strength["helmet"])) {
             $itemPoints = $this->strength["helmet"];
         }
         return $itemPoints;
@@ -200,7 +223,7 @@ class CustomArmorSet
     public function getChestplateDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getChestplateFromTier($this->tier)->getDefensePoints();
-        if(isset($this->strength["chestplate"])) {
+        if (isset($this->strength["chestplate"])) {
             $itemPoints = $this->strength["chestplate"];
         }
 
@@ -213,7 +236,7 @@ class CustomArmorSet
     public function getLeggingsDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getLeggingsFromTier($this->tier)->getDefensePoints();
-        if(isset($this->strength["leggings"])) {
+        if (isset($this->strength["leggings"])) {
             $itemPoints = $this->strength["leggings"];
         }
 
@@ -226,7 +249,7 @@ class CustomArmorSet
     public function getBootsDefensePoints(): float
     {
         $itemPoints = ArmorSetUtils::getBootsFromTier($this->tier)->getDefensePoints();
-        if(isset($this->strength["boots"])) {
+        if (isset($this->strength["boots"])) {
             $itemPoints = $this->strength["boots"];
         }
 
