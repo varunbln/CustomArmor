@@ -167,8 +167,12 @@ class EventListener implements Listener
             return;
         }
         $item = $event->getNewItem();
+        $oldItem = $event->getOldItem();
         if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
+        }
+        if (($oldNbt = $oldItem->getNamedTagEntry("burgercustomarmor")) !== null) {
+            if ($nbt->getValue() === $oldNbt->getValue()) return;
         }
         $setName = $nbt->getValue();
         if (!isset($this->plugin->using[$setName])) {
@@ -203,8 +207,12 @@ class EventListener implements Listener
             return;
         }
         $item = $event->getOldItem();
+        $newItem = $event->getNewItem();
         if (($nbt = $item->getNamedTagEntry("burgercustomarmor")) === null) {
             return;
+        }
+        if (($newNbt = $newItem->getNamedTagEntry("burgercustomarmor")) !== null) {
+            if ($nbt->getValue() === $newNbt->getValue()) return;
         }
         $setName = $nbt->getValue();
         if (!isset($this->plugin->using[$setName])) {
