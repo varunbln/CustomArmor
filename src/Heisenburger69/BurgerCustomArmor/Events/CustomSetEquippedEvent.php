@@ -3,8 +3,10 @@
 namespace Heisenburger69\BurgerCustomArmor\Events;
 
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
+use pocketmine\command\ConsoleCommandSender;
 use pocketmine\event\Event;
 use pocketmine\Player;
+use pocketmine\Server;
 
 class CustomSetEquippedEvent extends Event
 {
@@ -30,6 +32,15 @@ class CustomSetEquippedEvent extends Event
     public function getArmorSet(): CustomArmorSet
     {
         return $this->armorSet;
+    }
+
+    public function call(): void
+    {
+        foreach ($this->armorSet->getEquippedCommands() as $command) {
+            $command = str_replace("{PLAYER}", $this->player->getName(), $command);
+            Server::getInstance()->getCommandMap()->dispatch(new ConsoleCommandSender(), $command);
+        }
+        parent::call();
     }
 
     /**

@@ -61,6 +61,14 @@ class CustomArmorSet
      * @var array
      */
     public $durabilities;
+    /**
+     * @var array
+     */
+    private $equippedCommands;
+    /**
+     * @var array
+     */
+    private $unequippedCommands;
 
     /**
      * CustomArmorSet constructor.
@@ -75,7 +83,7 @@ class CustomArmorSet
      * @param array $lores
      * @param array $setBonusLore
      */
-    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $durabilities, array $names, array $lores, array $setBonusLore)
+    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $durabilities, array $names, array $lores, array $setBonusLore, array $equippedCommands, array $unequippedCommands)
     {
         $this->name = $name;
         $this->tier = $tier;
@@ -87,6 +95,8 @@ class CustomArmorSet
         $this->names = $names;
         $this->lores = $lores;
         $this->setBonusLore = $setBonusLore;
+        $this->equippedCommands = $equippedCommands;
+        $this->unequippedCommands = $unequippedCommands;
     }
 
     /**
@@ -310,5 +320,20 @@ class CustomArmorSet
         return $this->setBonusLore;
     }
 
+    /**
+     * @return array
+     */
+    public function getEquippedCommands(): array
+    {
+        return $this->equippedCommands;
+    }
+
+    /**
+     * @return array
+     */
+    public function getUnequippedCommands(): array
+    {
+        return $this->unequippedCommands;
+    }
 
 }

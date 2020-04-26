@@ -95,6 +95,18 @@ Example:
     - "&e+Level 2 Speed and Jump Boost Effects"
     - "&e+Permission to Fly"
 
+  # These commands are run when the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-commands:
+    - "say hello {PLAYER}"
+    - "say very epic {PLAYER}"
+
+  # These commands are run when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-commands:
+    - "say goodbye {PLAYER}"
+    - "say very epicn't {PLAYER}"
+
 Tank:
 
   tier: leather
