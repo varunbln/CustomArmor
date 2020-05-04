@@ -26,12 +26,12 @@ Players can be given Custom Armor Sets with the command /customarmor
 * Create a class system of different sets, with say an Archer set having high damage when using bows but very low defense
 * Have fun and mess around
 ## TODO:
-- [ ] Customizable messages to send when an armor set is equipped/unequipped.
+- [x] Customizable messages to send when an armor set is equipped/unequipped.
 - [ ] In-game Armor Set creation and modification using a UI
 - [ ] Conditional Abilities, for example: Near grass blocks
 - [ ] Allow mix-and-match of tiers rather than forcing an entire set to be one tier
 - [ ] Create a Wiki for more in-depth understanding of Armor Abilities
-- [ ] Custom crafting for Armor Pieces
+- [x] Custom crafting for Armor Pieces
 - [x] Allow commands to be executed when an armor set is equipped/unequipped.
 - [x] Custom durability values for Armor Pieces
 - [ ] Create an API for creation and registration of Abilities and Armor Sets

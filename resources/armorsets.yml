@@ -255,4 +255,16 @@ Assassin:
     - "&a+15% Outgoing damage dealt using Axes"
     - "&a+50% Outgoing damage dealt using Bows"
 
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "hello {PLAYER}"
+    - "very epic {PLAYER}"
+
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "goodbye {PLAYER}"
+    - "very epicn't {PLAYER}"
+
 

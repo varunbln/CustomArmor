@@ -1,0 +1,42 @@
+# This is where you create Crafting Recipes for Custom Armor Sets.
+# Due to some limitations, these do not show in the available recipes.
+# However, they do show when the correct recipe is placed in the crafting table.
+# In addition, some of the items properties like lore/name don't show correctly
+# nor do the custom colors if a leather set is used.
+# After crafting though, the item is correctly displayed.
+
+# This is the name of the armor set. Use a - to separate this and the item name.
+# In the below example, the recipe is to craft a leather helmet of the Example Custom Armor Set
+Example-leather_helmet:
+  # Consider this to be a 3x3 crafting grid.
+  # Wherever A is mentioned, the material A must be present.
+  # Wherever B is mentioned, the material B must be present.
+  shape:
+    - "AAA"
+    - "ABA"
+    - "AAA"
+  # Any number of materials can be added here.
+  materials:
+    A:
+      id: 334
+      meta: 0
+      count: 1
+    B:
+      id: 57
+      meta: 0
+      count: 1
+
+Assassin-leather_boots:
+  shape:
+    - "ABA"
+    - "ABA"
+    - "ABA"
+  materials:
+    A:
+      id: 334
+      meta: 0
+      count: 1
+    B:
+      id: 57
+      meta: 0
+      count: 1

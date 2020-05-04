@@ -41,6 +41,10 @@ class CustomSetUnequippedEvent extends Event
             $command = str_replace("{PLAYER}", $this->player->getName(), $command);
             Server::getInstance()->getCommandMap()->dispatch(new ConsoleCommandSender(), $command);
         }
+        foreach ($this->armorSet->getUnequippedMessages() as $msg) {
+            $msg = str_replace("{PLAYER}", $this->player->getName(), $msg);
+            $this->player->sendMessage($msg);
+        }
         parent::call();
     }
 

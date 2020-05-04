@@ -8,7 +8,16 @@ use Heisenburger69\BurgerCustomArmor\Abilities\AbilityUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Commands\CustomArmorCommand;
-use Heisenburger69\BurgerCustomArmor\Pocketmine\{Chain\ChainBoots,
+use pocketmine\inventory\ShapedRecipe;
+use pocketmine\item\Item;
+use pocketmine\item\ItemFactory;
+use pocketmine\nbt\tag\StringTag;
+use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Color;
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as C;
+use Heisenburger69\BurgerCustomArmor\Pocketmine\{
+    Chain\ChainBoots,
     Chain\ChainChestplate,
     Chain\ChainHelmet,
     Chain\ChainLeggings,
@@ -27,12 +36,8 @@ use Heisenburger69\BurgerCustomArmor\Pocketmine\{Chain\ChainBoots,
     Leather\LeatherBoots,
     Leather\LeatherCap,
     Leather\LeatherPants,
-    Leather\LeatherTunic};
-use pocketmine\item\ItemFactory;
-use pocketmine\plugin\PluginBase;
-use pocketmine\utils\Color;
-use pocketmine\utils\Config;
-use pocketmine\utils\TextFormat as C;
+    Leather\LeatherTunic
+};
 
 class Main extends PluginBase
 {
@@ -60,6 +65,10 @@ class Main extends PluginBase
      * @var array
      */
     public $using;
+    /**
+     * @var Config
+     */
+    private $craftingRecipes;
 
     public function onEnable()
     {
@@ -68,12 +77,15 @@ class Main extends PluginBase
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig();
         $this->saveResource("armorsets.yml");
+        $this->saveResource("recipes.yml");
         $this->saveResource("FireCape.png");
         $this->armorSets = new Config($this->getDataFolder() . "armorsets.yml");
+        $this->craftingRecipes = new Config($this->getDataFolder() . "recipes.yml");
 
         $this->registerCustomItems();
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         $this->registerArmorSets();
+        $this->registerRecipes();
         $this->getServer()->getCommandMap()->register("BurgerCustomArmor", new CustomArmorCommand($this));
     }
 
@@ -123,6 +135,8 @@ class Main extends PluginBase
             $properties["setbonuslore"],
             isset($properties["equipped-commands"]) ? $properties["equipped-commands"] : [],
             isset($properties["unequipped-commands"]) ? $properties["unequipped-commands"] : [],
+            isset($properties["equipped-messages"]) ? $properties["equipped-messages"] : [],
+            isset($properties["unequipped-messages"]) ? $properties["unequipped-messages"] : [],
         );
 
         $this->using[$name] = [];
@@ -159,6 +173,30 @@ class Main extends PluginBase
         foreach ($items as $item) {
             ItemFactory::registerItem($item, true);
         }
+    }
+
+    /**
+     * Definitely not stolen from PiggyBackpacks :)
+     * thx pig <3
+     */
+    private function registerRecipes(): void
+    {
+        foreach ($this->craftingRecipes->getAll() as $name => $recipeData) {
+            $customArmor = explode("-", $name);
+            $setName = $customArmor[0];
+            $setPiece = $customArmor[1];
+
+            $item = ItemFactory::fromString($setPiece);
+            $item->setNamedTagEntry(new StringTag("burgercustomarmor", $setName));
+            $item->setCustomName(C::RESET . C::BOLD . $setName . C::RESET . " " .$item->getName());
+
+            $requiredItems = [];
+            foreach ($recipeData["materials"] as $materialSymbol => $materialData) {
+                $requiredItems[$materialSymbol] = Item::get($materialData["id"], $materialData["meta"], $materialData["count"]);
+            }
+            $this->getServer()->getCraftingManager()->registerRecipe(new ShapedRecipe($recipeData["shape"], $requiredItems, [$item]));
+        }
+        $this->getServer()->getCraftingManager()->buildCraftingDataCache();
     }
 
 }

@@ -40,6 +40,10 @@ class CustomSetEquippedEvent extends Event
             $command = str_replace("{PLAYER}", $this->player->getName(), $command);
             Server::getInstance()->getCommandMap()->dispatch(new ConsoleCommandSender(), $command);
         }
+        foreach ($this->armorSet->getEquippedMessages() as $msg) {
+            $msg = str_replace("{PLAYER}", $this->player->getName(), $msg);
+            $this->player->sendMessage($msg);
+        }
         parent::call();
     }
 

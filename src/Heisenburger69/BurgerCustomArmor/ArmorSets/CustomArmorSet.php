@@ -69,6 +69,14 @@ class CustomArmorSet
      * @var array
      */
     private $unequippedCommands;
+    /**
+     * @var array
+     */
+    private $equippedMessages;
+    /**
+     * @var array
+     */
+    private $unequippedMessages;
 
     /**
      * CustomArmorSet constructor.
@@ -83,7 +91,7 @@ class CustomArmorSet
      * @param array $lores
      * @param array $setBonusLore
      */
-    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $durabilities, array $names, array $lores, array $setBonusLore, array $equippedCommands, array $unequippedCommands)
+    public function __construct(string $name, int $tier, bool $glint, array $abilities, Color $color, array $strength, array $durabilities, array $names, array $lores, array $setBonusLore, array $equippedCommands = [], array $unequippedCommands = [], array $equippedMessages = [], array $unequippedMessages = [])
     {
         $this->name = $name;
         $this->tier = $tier;
@@ -97,6 +105,8 @@ class CustomArmorSet
         $this->setBonusLore = $setBonusLore;
         $this->equippedCommands = $equippedCommands;
         $this->unequippedCommands = $unequippedCommands;
+        $this->equippedMessages = $equippedMessages;
+        $this->unequippedMessages = $unequippedMessages;
     }
 
     /**
@@ -334,6 +344,22 @@ class CustomArmorSet
     public function getUnequippedCommands(): array
     {
         return $this->unequippedCommands;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEquippedMessages(): array
+    {
+        return $this->equippedMessages;
+    }
+
+    /**
+     * @return array
+     */
+    public function getUnequippedMessages(): array
+    {
+        return $this->unequippedMessages;
     }
 
 }

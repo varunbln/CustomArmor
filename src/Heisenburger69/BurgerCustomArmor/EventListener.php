@@ -5,6 +5,7 @@ namespace Heisenburger69\BurgerCustomArmor;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Defensive\DefensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Reactive\Offensive\OffensiveAbility;
 use Heisenburger69\BurgerCustomArmor\Abilities\Togglable\TogglableAbility;
+use Heisenburger69\BurgerCustomArmor\ArmorSets\ArmorSetUtils;
 use Heisenburger69\BurgerCustomArmor\ArmorSets\CustomArmorSet;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetEquippedEvent;
 use Heisenburger69\BurgerCustomArmor\Events\CustomSetUnequippedEvent;
@@ -13,10 +14,12 @@ use Heisenburger69\BurgerCustomArmor\Utils\Utils;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\Player;
+use pocketmine\utils\TextFormat as C;
 
 class EventListener implements Listener
 {
@@ -234,6 +237,48 @@ class EventListener implements Listener
                     $ability->off($player);
                 }
             }
+        }
+    }
+
+    /**
+     * @param CraftItemEvent $event
+     *
+     * Lots of shitty code to support results with a custom lore and such
+     */
+    public function onCraft(CraftItemEvent $event): void
+    {
+        $outputs = $event->getOutputs();
+        $craftingSet = null;
+        foreach ($outputs as $output) {
+            if (($nbt = $output->getNamedTagEntry("burgercustomarmor")) === null) continue;
+            $craftingSet = $output;
+            break;
+        }
+        $inputs = $event->getInputs();
+        $player = $event->getPlayer();
+        if ($craftingSet === null) {
+            return;
+        }
+
+        $setName = $craftingSet->getNamedTagEntry("burgercustomarmor")->getValue();
+        $armorSet = $this->plugin->customSets[$setName];
+        if (!$armorSet instanceof CustomArmorSet) {
+            return;
+        }
+
+        $event->setCancelled();
+        foreach ($inputs as $input) {
+            $player->getInventory()->removeItem($input);
+        }
+
+        if(Utils::isHelmet($craftingSet)) {
+            $player->getInventory()->addItem($armorSet->getHelmet());
+        } elseif(Utils::isChestplate($craftingSet)) {
+            $player->getInventory()->addItem($armorSet->getChestplate());
+        }elseif(Utils::isLeggings($craftingSet)) {
+            $player->getInventory()->addItem($armorSet->getLeggings());
+        }elseif(Utils::isBoots($craftingSet)) {
+            $player->getInventory()->addItem($armorSet->getBoots());
         }
     }
 }
