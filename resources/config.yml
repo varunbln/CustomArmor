@@ -5,6 +5,9 @@
 # armor set abilities will be enabled for all words.
 enable-world-blacklist: false
 
+# Set this to false to disable particles showing for Effects when wearing a Custom Armor Set
+show-effect-particles: false
+
 # If enable-world-blacklist is set to true, armor set abilities will be enabled for all worlds,
 # except the worlds mentioned here.
 blacklisted-worlds:
