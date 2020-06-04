@@ -18,8 +18,11 @@ use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\item\Item;
 use pocketmine\Player;
+use pocketmine\scheduler\ClosureTask;
 use pocketmine\utils\TextFormat as C;
+use function var_dump;
 
 class EventListener implements Listener
 {
@@ -267,9 +270,13 @@ class EventListener implements Listener
         }
 
         $event->setCancelled();
-        foreach ($inputs as $input) {
-            $player->getInventory()->removeItem($input);
-        }
+        $this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($inputs, $player): void
+        {
+            foreach ($inputs as $input) {
+                $player->getInventory()->removeItem($input);
+            }
+        }), 5);
+
 
         if(Utils::isHelmet($craftingSet)) {
             $player->getInventory()->addItem($armorSet->getHelmet());
