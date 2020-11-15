@@ -1,3 +1,6 @@
+[![](https://poggit.pmmp.io/shield.dl.total/BurgerCustomArmor)](https://poggit.pmmp.io/p/BurgerCustomArmor)
+
+
 # BurgerCustomArmor
 Saw that server that gave you cool effects if you wore the entirety of a specific armor set? 
 Now you can create custom armor sets with several abilities too! With a wide range of abilities that you can give armor sets
