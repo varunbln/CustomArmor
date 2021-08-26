@@ -201,30 +201,4 @@ class ArmorSetUtils
 
         return $lore;
     }
-
-    public static function getTotalStrengthPoints(int $tier, array $strength): int
-    {
-        $helmetStrength = self::getHelmetFromTier($tier)->getDefensePoints();
-        if (isset($strength["helmet"])) {
-            $helmetStrength = $strength["helmet"];
-        }
-
-        $chestplateStrength = self::getChestplateFromTier($tier)->getDefensePoints();
-        if (isset($strength["chestplate"])) {
-            $chestplateStrength = $strength["chestplate"];
-        }
-
-        $leggingsStrength = self::getLeggingsFromTier($tier)->getDefensePoints();
-        if (isset($strength["leggings"])) {
-            $leggingsStrength = $strength["leggings"];
-        }
-
-        $bootsStrength = self::getBootsFromTier($tier)->getDefensePoints();
-        if (isset($strength["boots"])) {
-            $helmetStrength = $strength["boots"];
-        }
-
-        return $helmetStrength + $chestplateStrength + $leggingsStrength + $bootsStrength;
-
-    }
 }

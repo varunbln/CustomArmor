@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16adc6ad-ad34-4f03-9c5e-17c6f348c8f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/EventListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/ArmorSets/ArmorSetUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heisenburger69/BurgerCustomArmor/ArmorSets/ArmorSetUtils.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="1526" />
+    <option name="totalTimeSeconds" value="1805" />
     <option name="idleThresholdMs" value="1800000" />
     <option name="autoCountIdleSeconds" value="1800" />
   </component>
@@ -37,6 +35,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../pmmp-phar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,7 +66,7 @@
       <updated>1629971815056</updated>
       <workItem from="1629971817689" duration="14000" />
       <workItem from="1629975699756" duration="5000" />
-      <workItem from="1629991330605" duration="1001000" />
+      <workItem from="1629991330605" duration="1428000" />
     </task>
     <servers />
   </component>

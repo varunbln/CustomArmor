@@ -102,7 +102,7 @@ class EventListener implements Listener
 
     /**
      * Overwriting the defense points of each armor piece if they're part of a Custom Armor Set
-     *
+     * Enchantment modifier not affected
      * @param EntityDamageEvent $event
      * @priority MONITOR
      */
