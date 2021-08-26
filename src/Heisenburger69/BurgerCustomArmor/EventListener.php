@@ -257,7 +257,6 @@ class EventListener implements Listener
             $craftingSet = $output;
             break;
         }
-        $inputs = $event->getInputs();
         $player = $event->getPlayer();
         if ($craftingSet === null) {
             return;
@@ -269,23 +268,18 @@ class EventListener implements Listener
             return;
         }
 
-        $event->setCancelled();
-        $this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($inputs, $player): void
-        {
-            foreach ($inputs as $input) {
-                $player->getInventory()->removeItem($input);
+        $this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($player, $craftingSet, $armorSet) : void {
+            if($player->getInventory()->contains($craftingSet)) $player->getInventory()->removeItem($craftingSet);
+            else $player->getCursorInventory()->removeItem($craftingSet);
+            if(Utils::isHelmet($craftingSet)) {
+                $player->getInventory()->addItem($armorSet->getHelmet());
+            } elseif(Utils::isChestplate($craftingSet)) {
+                $player->getInventory()->addItem($armorSet->getChestplate());
+            }elseif(Utils::isLeggings($craftingSet)) {
+                $player->getInventory()->addItem($armorSet->getLeggings());
+            }elseif(Utils::isBoots($craftingSet)) {
+                $player->getInventory()->addItem($armorSet->getBoots());
             }
-        }), 5);
-
-
-        if(Utils::isHelmet($craftingSet)) {
-            $player->getInventory()->addItem($armorSet->getHelmet());
-        } elseif(Utils::isChestplate($craftingSet)) {
-            $player->getInventory()->addItem($armorSet->getChestplate());
-        }elseif(Utils::isLeggings($craftingSet)) {
-            $player->getInventory()->addItem($armorSet->getLeggings());
-        }elseif(Utils::isBoots($craftingSet)) {
-            $player->getInventory()->addItem($armorSet->getBoots());
-        }
+        }), 1);
     }
 }
