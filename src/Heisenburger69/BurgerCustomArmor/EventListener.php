@@ -104,13 +104,13 @@ class EventListener implements Listener
      * Overwriting the defense points of each armor piece if they're part of a Custom Armor Set
      *
      * @param EntityDamageEvent $event
+     * @priority MONITOR
      */
     public function onModifier(EntityDamageEvent $event): void
     {
         $player = $event->getEntity();
-        if (!$player instanceof Player) {
-            return;
-        }
+        if (!$player instanceof Player) return;
+        if($event->isCancelled()) return;
         $items = $player->getArmorInventory()->getContents();
         $totalP = 0;
         foreach ($items as $item) {
@@ -129,7 +129,7 @@ class EventListener implements Listener
             }
             $totalP += $itemP;
         }
-        $event->setModifier(-$event->getFinalDamage() * $totalP * 0.04, EntityDamageEvent::MODIFIER_ARMOR);
+        $event->setModifier(-$event->getBaseDamage() * $totalP * 0.04, EntityDamageEvent::MODIFIER_ARMOR);
     }
 
     /**
