@@ -1,9 +1,0 @@
----
-name: BurgerCustomArmor
-version: 0.0.4
-main: Heisenburger69\BurgerCustomArmor\Main
-api: 3.0.0
-author: Heisenburger69
-description: Create Custom Armor Sets with several abilities!
-website: github.com/Heisenburger69
-...
