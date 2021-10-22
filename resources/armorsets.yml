@@ -266,5 +266,495 @@ Assassin:
   unequipped-messages:
     - "goodbye {PLAYER}"
     - "very epicn't {PLAYER}"
+    
+    supreme:
+
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.1
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.2
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.2
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.5
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
+
+  color:
+    r: 255
+    g: 0
+    b: 0
+
+  strength:
+    helmet: 4
+    chestplate: 8
+    leggings: 6
+    boots: 4
+
+  durability:
+    helmet: 810
+    chestplate: 1000
+    leggings: 935
+    boots: 686
+    
+  name:
+    helmet: "&l&4Supreme Headgear"
+    chestplate: "&l&4Supreme Vest"
+    leggings: "&l&4Supreme Chaps"
+    boots: "&l&4Supreme Turster Boots"
+
+  lore:
+    helmet:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "\n§r§7+8 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "\n§r§7+6 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&4§lSUPREME SET BONUS: "
+    - "§r§4* no fall damage / food less"
+    - "&4* deal §a+15% §4damage to enemies"
+    - "§4* enemy arrows deal §c10% §4more more damage to you"
+    - "§4* 200+ clout"
+    - "§4* chance to give slownes 1 for 5 second when hiting enemy from behind" 
+    - "§r§7(requires all 4 supreme items)"
+    
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "§4§lSUPREME SET BONUS: "
+    - "§r§l§4no fall damage / food less"
+    - "§l§4deal §a+15% §4damage to enemies"
+    - "§l§4enemy arrows deal §c10% §4more more damage to you"
+    - "§l§4200+ clout"
+    - "§l§4chance to give slownes 1 for 5 second when hiting enemy from behind"
+    
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "§l§4-SUPREME SET BONUS"
+    - "{PLAYER}Relod Armor Jika Anda mati"
+
+ranger:
+
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.1
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.2
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.2
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.7
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
+
+  color:
+    r: 0
+    g: 255
+    b: 0
+
+  strength:
+    helmet: 4
+    chestplate: 8
+    leggings: 6
+    boots: 4
+
+  durability:
+    helmet: 810
+    chestplate: 1000
+    leggings: 935
+    boots: 686
+    
+  name:
+    helmet: "&l&aRanger Hood"
+    chestplate: "&l&aRanger Cuirass"
+    leggings: "&l&aRanger Graves"
+    boots: "&l&aRanger Slipper"
+
+  lore:
+    helmet:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "\n§r§7+8 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "\n§r§7+6 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&a§lRANGER SET BONUS: "
+    - "§r§a* ranger bows grants 30% increased bow damage"
+    - "§a* enemy bows do 25% less damage to you"
+    - "§a* immune heavy" 
+    - "§r§7(requires all 4 ranger items)"
+    
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "§a§lRANGER SET BONUS: "
+    - "§r§l§aranger bows grants 30% increased bow damage"
+    - "§l§aenemy bows do 25% less damage to you"
+    - "§l§aimmune heavy"
+    
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "§l§4-RANGER SET BONUS"
+    - "{PLAYER}Relod Armor Jika Anda mati"
+    
+
+ancient:
+
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.3
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.2
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.2
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.7
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
+
+  color:
+    r: 0
+    g: 0
+    b: 0
+
+  strength:
+    helmet: 4
+    chestplate: 8
+    leggings: 6
+    boots: 4
+
+  durability:
+    helmet: 810
+    chestplate: 1000
+    leggings: 935
+    boots: 686
+    
+  name:
+    helmet: "&l&3Ancient Cap"
+    chestplate: "&l&3Ancient Cuirass"
+    leggings: "&l&3Ancient Graves"
+    boots: "&l&3Ancient Fillper"
+
+  lore:
+    helmet:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "\n§r§7+8 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "\n§r§7+6 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "\n§r§7+4 Armor Value\n§7Durability 810"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&3§lANCIENT SET BONUS: "
+    - "§r§3*§a +30% §3outdoing damage"
+    - "§3* §a+10% §3custom enchant damage"
+    - "§3* §a-15% §3incoming damage" 
+    - "§3* levitan cruse ability | §r§fchances 100% damage to victim 5s"
+    - "§3* §a+5% §3damage enemy holding sword"
+    - "§r§7(requires all 4 ancient items)"
+   
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "§3§lANCIENT SET BONUS:"
+    - "§r§l§3§a+30% §3outdoing damage"
+    - "§l§3§a+10% §3custom enchant damage"
+    - "§l§3§a-15% §3incoming damage"
+    - "§l§3levitan cruse ability | §r§fchances 100% damage to victim 5s"
+    - "§l§3§a+5% §3damage enemy holding sword"
+    
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "§l§4-ANCIENT SET BONUS"
+    - "{PLAYER}Relod Armor Jika Anda mati"
+
+oc:
+
+  tier: chainmail
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.3
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.2
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.2
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.7
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
+
+  color:
+    r: 255
+    g: 255
+    b: 0
+
+  strength:
+    helmet: 4
+    chestplate: 8
+    leggings: 6
+    boots: 4
+
+  durability:
+    helmet: 1000
+    chestplate: 2030
+    leggings: 1509
+    boots: 1200
+    
+  name:
+    helmet: "&l&eOcelot Hat"
+    chestplate: "&l&eOcelot Jungler Shield"
+    leggings: "&l&eOcelot Strong Feet"
+    boots: "&l&eOcelot Jumper"
+
+  lore:
+    helmet:
+      - "§eOcelot Head"
+      - "\n§r§7+5 Armor Value\n§7Durability 1000"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "\n§r§7+8 Armor Value\n§7Durability 2030"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "\n§r§7+6 Armor Value\n§7Durability 1509"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "\n§r§7+6 Armor Value\n§7Durability 1200"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "§e§lOCELOT SET BONUS: "
+    - "§r§e*§a +40% §eoutdoing damage"
+    - "§e* §a+10% §ecustom enchant damage"
+    - "§e* §a-25% §eincoming damage" 
+    - "§e* levitan cruse ability | §r§7chances 100% damage to victim 5s"
+    - "§e* ocelot ability | §7gain sharpness 10 chances 5% to victim 2s"
+    - "§e* §a+5% §edamage enemy holding sword"
+    - "§r§7(requires all 4 ocelot items)"
+    
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "§e§lOCELOT SET BONUS: "
+    - "§r§l§a+40% §eoutdoing damage"
+    - "§l§e§a+10% §3custom enchant damage"
+    - "§l§e§a-15% §3incoming damage"
+    - "§l§elevitan cruse ability | §r§fchances 100% damage to victim 5s"
+    - "§l§e§a+5% §3damage enemy holding sword"
+    
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "§l§4-OCELOT SET BONUS"
+    - "{PLAYER}Relod Armor Jika Anda mati"
+
+shark:
+
+  tier: leather
+
+  glint: true
+
+  abilities:
+
+    # The abilities used here are:
+    #   DamageAmplification: Increasing the damage dealt by the player when the full set is worn.
+    #   SwordNegation: Reduces the damage taken by the player when hit with a sword when full set is worn.
+    #   AxeNegation: Reduces the damage taken by the player when hit with an axe when full set is worn.
+    #   Effect: Gives the player the effect when the full set is worn.
+    #   BowNegation: Reduces the damage taken by the player when hit with a bow when full set is worn.
+    #   Cape: Gives the player the cape specified when the Armor Set is worn.
+    # Makes player deal 10% more damage overall. Set negative to deal less damage.
+    DamageAmplification: 0.9
+    # Makes player deal 20% more damage using swords. Set negative to deal less damage.
+    SwordAmplification: 0.8
+    # Makes player deal 15% more damage using axes. Set negative to deal less damage.
+    AxeAmplification: 0.2
+    # Makes player deal 50% more damage using bows. Set negative to deal less damage.
+    BowAmplification: 0.7
+    # Gives the player a Fire Cape. The cape image must be in the folder of the plugin in plugin_data
+    Cape: FireCape.png
+    # Gives the player the Speed and Jump Boost Effects at level 2
+    Effect:
+      - speed: 4
+      - water_breathing: 1
+      - health_boost: 3
+      - fire_resistance: 1
+
+  color:
+    r: 0
+    g: 255
+    b: 255
+
+  strength:
+    helmet: 4
+    chestplate: 8
+    leggings: 6
+    boots: 4
+
+  durability:
+    helmet: 1000
+    chestplate: 2030
+    leggings: 1509
+    boots: 1200
+    
+  name:
+    helmet: "&l&bShark Sharp Tooth"
+    chestplate: "&l&bShark Anti Lava "
+    leggings: "&l&bShark Human Hunter"
+    boots: "&l&bShark Water Speed"
+
+  lore:
+    helmet:
+      - "\n§r§7+5 Armor Value\n§7Durability 1000"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    chestplate:
+      - "\n§r§7+8 Armor Value\n§7Durability 2030"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    leggings:
+      - "\n§r§7+6 Armor Value\n§7Durability 1509"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+    boots:
+      - "\n§r§7+6 Armor Value\n§7Durability 1200"
+      - "&4armor stronger than normal diamond"
+      - " "
+      - "{FULLSETBONUS}"
+
+  setbonuslore:
+    - "&b§lSHARK SET BONUS: "
+    - "§r§b*§a +40% §boutdoing damage"
+    - "§b* §a+20% §bcustom enchant damage"
+    - "§b* §a-35% §bincoming damage" 
+    - "§b* levitan cruse ability | §r§7chances 150% damage to victim 5s"
+    - "§b* shark ability | §7gain sharpness 15 chances 5% to victim 2s"
+    - "§b* §a+10% §bdamage enemy holding sword"
+    - "§b* ability breathe in water"
+    - "§b* gears IV"
+    - "§b* Devil Blood 3"
+    - "§r§7(requires all 4 shark items)"
+    
+  # These messages are sent to the player wears the FULL armor set.
+  # The name of the player replaces {PLAYER}
+  equipped-messages:
+    - "§b§lSHARK SET BONUS: "
+    - "§r§l§b*§a +40% §boutdoing damage"
+    - "§l§b§a+20% §bcustom enchant damage"
+    - "§l§b§a-35% §bincoming damage"
+    - "§l§blevitan cruse ability | §r§7chances 150% damage to victim 5s"
+    - "§l§bshark ability | §7gain sharpness 15 chances 5% to victim 2s"
+    - "§l§b§a+10% §bdamage enemy holding sword"
+    - "§l§bability breathe in water"
+    - "§l§bgears IV"
+    - "§l§bDevil Blood 3"
+    
+  # These messages are sent to the player when the player removes any piece of the armor set
+  # while wearing a FULL armor set. The name of the player replaces {PLAYER}.
+  unequipped-messages:
+    - "§l§4-SHARK SET BONUS"
+    - "{PLAYER}Relod Armor Jika Anda mati"
+
 
 
